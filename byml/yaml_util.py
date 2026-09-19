@@ -1,5 +1,5 @@
 import yaml
-import byml.byml as byml
+import byml
 
 def add_constructors(loader):
     yaml.add_constructor(u'tag:yaml.org,2002:int', lambda l, node: byml.Int(l.construct_yaml_int(node)), Loader=loader)

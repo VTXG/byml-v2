@@ -192,7 +192,7 @@ class Byml:
 
     def _read_string(self, offset: int) -> str:
         end = self._data.find(_NUL_CHAR, offset)
-        return self._data[offset:end].decode('utf-8')
+        return self._data[offset:end].decode('shift_jis')
 
 class _PlaceholderOffsetWriter:
     """Writes a placeholder offset value that will be filled later."""
@@ -309,7 +309,7 @@ class Writer:
 
         for (string, offset_writer) in zip(table.keys(), offset_writers):
             offset_writer.write_current_offset(base)
-            stream.write(bytes(string, "utf8"))
+            stream.write(bytes(string, "shift_jis"))
             stream.write(_NUL_CHAR)
         last_offset_writer.write_current_offset(base)
 

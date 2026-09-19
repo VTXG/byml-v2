@@ -5,9 +5,9 @@ import shutil
 import sys
 import yaml
 
-from . import byml
+import byml
 import oead
-from . import yaml_util
+import yaml_util
 
 def main() -> None:
     parser = argparse.ArgumentParser(description='Converts a YAML file to BYML.')
